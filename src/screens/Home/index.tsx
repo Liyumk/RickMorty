@@ -4,6 +4,13 @@ import Category from '../../components/Category';
 import {colors, dimensions} from '../../../app/styles/base';
 
 const Home = () => {
+  const categories = [
+    {title: 'Characters', onPress: () => console.log('Characters')},
+    {title: 'Places', onPress: () => console.log('Places')},
+    {title: 'Episodes', onPress: () => console.log('Episodes')},
+    {title: 'Others', onPress: () => console.log('Others')},
+  ];
+
   return (
     <ScrollView
       contentContainerStyle={[
@@ -16,36 +23,18 @@ const Home = () => {
           source={require('../../assets/img/rick-and-morty-title.png')}
         />
         <View style={styles.categoryContainer}>
-          <Category
-            onPress={() => {
-              console.log('Category 1');
-            }}
-          />
-          <Category
-            onPress={() => {
-              console.log('Category 1');
-            }}
-          />
-          <Category
-            onPress={() => {
-              console.log('Category 1');
-            }}
-          />
-          <Category
-            onPress={() => {
-              console.log('Category 1');
-            }}
-          />
+          {categories.map((category, index) => (
+            <Category
+              key={index}
+              title={category.title}
+              onPress={category.onPress}
+            />
+          ))}
         </View>
         <View>
           <Image
             source={require('../../assets/img/ricknmorty.png')}
-            style={{
-              marginTop: 10,
-              width: dimensions.fullWidth,
-              height: 400,
-              resizeMode: 'contain',
-            }}
+            style={styles.bottomImage}
           />
         </View>
       </View>

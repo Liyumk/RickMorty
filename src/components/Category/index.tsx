@@ -10,7 +10,7 @@ export interface CategoryProps {
 const Category: FC<CategoryProps> = ({title, onPress}) => {
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
-      <Text style={styles.text}>Category {title}</Text>
+      <Text style={styles.text}>{title}</Text>
     </TouchableOpacity>
   );
 };

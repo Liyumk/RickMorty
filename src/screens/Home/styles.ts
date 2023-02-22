@@ -7,6 +7,12 @@ export const styles = StyleSheet.create({
     height: dimensions.fullWidth / 3,
     maxWidth: dimensions.fullWidth,
   },
+  bottomImage: {
+    marginTop: 10,
+    width: dimensions.fullWidth,
+    height: 400,
+    resizeMode: 'contain',
+  },
   categoryContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
