@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
   },
   textContainer: {
-    backgroundColor: 'rgba(0, 100, 0, 0.3)',
+    backgroundColor: 'rgba(0, 100, 80, 0.3)',
     width: '100%',
   },
 });
