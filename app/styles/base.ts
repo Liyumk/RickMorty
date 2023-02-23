@@ -15,7 +15,7 @@ export const dimensions = {
 
 export const colors = {
   primary: '#1D7874',
-  secondary: '#679289',
+  secondary: '#7cbc6c',
   tertiary: '#F4C095',
   quaternary: '#FBE7C6',
   darker: '#071E22',
@@ -33,7 +33,8 @@ export const padding = {
 export const fonts = {
   sm: 12,
   md: 18,
-  lg: 28,
+  lg: 24,
+  xl: 28,
   primary: 'Cochin',
 };
 

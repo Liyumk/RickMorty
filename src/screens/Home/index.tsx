@@ -5,10 +5,29 @@ import {colors, dimensions} from '../../../app/styles/base';
 
 const Home = () => {
   const categories = [
-    {title: 'Characters', onPress: () => console.log('Characters')},
-    {title: 'Places', onPress: () => console.log('Places')},
-    {title: 'Episodes', onPress: () => console.log('Episodes')},
-    {title: 'Others', onPress: () => console.log('Others')},
+    {
+      title: 'Characters',
+      onPress: () => console.log('Characters'),
+      source: require('../../assets/img/mad_rick_and_morty.png'),
+    },
+    {
+      title: 'Places',
+      onPress: () => console.log('Places'),
+      source: require('../../assets/img/portal_travel.png'),
+      imageStyle: {
+        height: 250,
+      },
+    },
+    {
+      title: 'Episodes',
+      onPress: () => console.log('Episodes'),
+      source: require('../../assets/img/rick-morty-open-eye.png'),
+    },
+    {
+      title: 'Others',
+      onPress: () => console.log('Others'),
+      source: require('../../assets/img/rick-and-morty-running.png'),
+    },
   ];
 
   return (
@@ -28,10 +47,12 @@ const Home = () => {
               key={index}
               title={category.title}
               onPress={category.onPress}
+              source={category.source}
+              imageStyle={category?.imageStyle}
             />
           ))}
         </View>
-        <View>
+        <View style={styles.bottomImageContainer}>
           <Image
             source={require('../../assets/img/ricknmorty.png')}
             style={styles.bottomImage}

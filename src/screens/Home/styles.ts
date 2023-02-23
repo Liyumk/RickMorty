@@ -8,10 +8,13 @@ export const styles = StyleSheet.create({
     maxWidth: dimensions.fullWidth,
   },
   bottomImage: {
-    marginTop: 10,
+    // marginTop: 10,
     width: dimensions.fullWidth,
     height: 400,
     resizeMode: 'contain',
+  },
+  bottomImageContainer: {
+    marginTop: 20,
   },
   categoryContainer: {
     flexDirection: 'row',
