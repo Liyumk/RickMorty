@@ -24,7 +24,13 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
   },
   textContainer: {
-    backgroundColor: 'rgba(0, 80, 50, 0.2)',
+    backgroundColor: 'rgba(0, 100, 50, 0.3)',
     width: '100%',
+    height: '100%',
+    borderRadius: 2,
+    paddingHorizontal: 10,
+    paddingVertical: 2,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
