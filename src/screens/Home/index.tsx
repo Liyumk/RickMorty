@@ -2,12 +2,19 @@ import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 import {styles} from './styles';
 import Category from '../../components/Category';
 import {colors, dimensions} from '../../../app/styles/base';
+import {NavigationProp} from '@react-navigation/native';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {MainStackNavigatorParamList} from '../../navigation/types';
 
-const Home = () => {
+type HomeProps = NativeStackScreenProps<MainStackNavigatorParamList, 'Home'>;
+
+const Home = ({navigation}: HomeProps) => {
   const categories = [
     {
       title: 'Characters',
-      onPress: () => console.log('Characters'),
+      onPress: () => {
+        navigation.navigate('Characters');
+      },
       source: require('../../assets/img/mad_rick_and_morty.png'),
     },
     {

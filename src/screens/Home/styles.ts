@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {baseStyles, colors, dimensions} from '../../../app/styles/base';
+import {baseStyles, dimensions} from '../../../app/styles/base';
 
 export const styles = StyleSheet.create({
   ...baseStyles,
@@ -8,7 +8,6 @@ export const styles = StyleSheet.create({
     maxWidth: dimensions.fullWidth,
   },
   bottomImage: {
-    // marginTop: 10,
     width: dimensions.fullWidth,
     height: 400,
     resizeMode: 'contain',
