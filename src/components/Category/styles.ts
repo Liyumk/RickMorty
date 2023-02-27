@@ -25,7 +25,7 @@ export const styles = StyleSheet.create({
   },
   textContainer: {
     backgroundColor: 'rgba(0, 95, 80, 0.3)',
-    borderRadius: 20,
+    borderRadius: 5,
     paddingHorizontal: 10,
     justifyContent: 'center',
     alignItems: 'center',
