@@ -3,6 +3,8 @@ import React from 'react';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {MainStackNavigatorParamList} from '../../navigation/types';
 import {RouteProp, useRoute} from '@react-navigation/native';
+import {colors, fonts, padding} from '../../styles/base';
+import CharacterBasic from '../../components/CharacterBasic';
 
 type charactersProp = NativeStackScreenProps<
   MainStackNavigatorParamList,
@@ -15,12 +17,23 @@ const Characters = () => {
   const route = useRoute<charactersRouteProp>();
 
   return (
-    <View>
-      <Text>Characters</Text>
+    <View style={styles.container}>
+      <Text style={styles.header}>Characters</Text>
+      <CharacterBasic />
     </View>
   );
 };
 
 export default Characters;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: colors.darker,
+    padding: padding.md,
+  },
+  header: {
+    fontSize: fonts.lg,
+    marginVertical: 10,
+  },
+});

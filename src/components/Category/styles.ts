@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {colors, dimensions, fonts, padding} from '../../../app/styles/base';
+import {colors, dimensions, fonts, padding} from '../../styles/base';
 
 export const styles = StyleSheet.create({
   backgroundImage: {
@@ -25,7 +25,7 @@ export const styles = StyleSheet.create({
   },
   textContainer: {
     backgroundColor: 'rgba(0, 95, 80, 0.3)',
-    borderRadius: 5,
+    borderRadius: 2,
     paddingHorizontal: 10,
     justifyContent: 'center',
     alignItems: 'center',
