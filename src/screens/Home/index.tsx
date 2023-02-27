@@ -1,7 +1,7 @@
 import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 import {styles} from './styles';
 import Category from '../../components/Category';
-import {colors, dimensions} from '../../../app/styles/base';
+import {colors, dimensions} from '../../styles/base';
 import {NavigationProp} from '@react-navigation/native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {MainStackNavigatorParamList} from '../../navigation/types';

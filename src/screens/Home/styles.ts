@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {baseStyles, dimensions} from '../../../app/styles/base';
+import {baseStyles, dimensions} from '../../styles/base';
 
 export const styles = StyleSheet.create({
   ...baseStyles,
