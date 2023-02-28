@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, ScrollView} from 'react-native';
 import React from 'react';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {MainStackNavigatorParamList} from '../../navigation/types';
@@ -20,12 +20,14 @@ const Characters = () => {
   return (
     <View style={styles.container}>
       <Header title="Characters" />
-      <View style={styles.characterBasicContainer}>
+      <ScrollView contentContainerStyle={styles.characterBasicContainer}>
         <CharacterBasic />
         <CharacterBasic />
         <CharacterBasic />
         <CharacterBasic />
-      </View>
+        <CharacterBasic />
+        <CharacterBasic />
+      </ScrollView>
     </View>
   );
 };
@@ -43,5 +45,5 @@ const styles = StyleSheet.create({
     fontWeight: '900',
     marginVertical: 10,
   },
-  characterBasicContainer: {},
+  characterBasicContainer: {paddingBottom: 10},
 });
