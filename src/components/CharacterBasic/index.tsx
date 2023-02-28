@@ -4,7 +4,7 @@ import {colors, fonts} from '../../styles/base';
 import StatusIndicator from '../StatusIndicator';
 
 const CharacterBasic = () => {
-  const uri = 'https://robohash.org/rickhloy';
+  const uri = 'https://robohash.org/weirdbot';
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.primary,
     paddingRight: 10,
     borderRadius: 5,
+    marginTop: 10,
   },
   descriptionsContainer: {
     paddingTop: 15,
