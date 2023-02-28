@@ -13,7 +13,9 @@ const CharacterBasic = () => {
       <View style={styles.descriptionsContainer}>
         <Text style={styles.name}>Rick Sanches</Text>
         <View style={styles.status}>
-          <StatusIndicator />
+          <View style={styles.statusIndicatorContainer}>
+            <StatusIndicator />
+          </View>
           <Text style={styles.descriptionsText}> Alive - Human</Text>
         </View>
         <Text style={styles.descriptionsText}>🚹 Male</Text>
@@ -33,12 +35,15 @@ const styles = StyleSheet.create({
     width: '100%',
     minHeight: 150,
     backgroundColor: colors.primary,
-
     paddingRight: 10,
     borderRadius: 5,
   },
   descriptionsContainer: {
-    paddingTop: 10,
+    paddingTop: 15,
+  },
+  descriptionsText: {
+    fontWeight: '600',
+    marginTop: 6,
   },
   image: {
     width: 180,
@@ -49,17 +54,16 @@ const styles = StyleSheet.create({
     fontSize: fonts.md,
     fontWeight: '600',
   },
+  planet: {
+    fontWeight: '900',
+  },
   status: {
     flexDirection: 'row',
     alignItems: 'center',
     columnGap: 4,
     marginTop: 5,
   },
-  descriptionsText: {
-    fontWeight: '600',
-    marginTop: 5,
-  },
-  planet: {
-    fontWeight: '900',
+  statusIndicatorContainer: {
+    paddingTop: 5,
   },
 });
