@@ -10,9 +10,9 @@ export interface Props {
 type Shape = 'square' | 'circle';
 
 const StatusIndicator = ({
-  color = 'green',
+  color = '#90EE90',
   shape = 'circle',
-  size = 10,
+  size = 15,
 }: Props): JSX.Element => {
   const styleAccordingProps = {
     borderRadius: shape === 'circle' ? 50 : shape === 'square' ? 2 : 50,
