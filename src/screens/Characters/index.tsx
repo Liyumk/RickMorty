@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
   },
   header: {
     fontSize: fonts.lg,
+    fontWeight: '900',
     marginVertical: 10,
   },
 });
