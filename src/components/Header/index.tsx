@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import React, {PropsWithChildren} from 'react';
 import MIIcon from 'react-native-vector-icons/MaterialIcons';
-import {fonts} from '../../styles/base';
+import {colors, fonts} from '../../styles/base';
 import {useNavigation} from '@react-navigation/native';
 
 export interface HeaderProps extends PropsWithChildren {
@@ -37,7 +37,7 @@ const Header = ({
           onPress={() => {
             navigation.goBack();
           }}>
-          <MIIcon name="chevron-left" size={iconSize} />
+          <MIIcon name="chevron-left" size={iconSize} color={colors.white} />
         </TouchableOpacity>
       )}
       <Text style={[styles.headerText, headerTextStyle]}>{title}</Text>
@@ -57,5 +57,6 @@ const styles = StyleSheet.create({
   headerText: {
     fontSize: fonts.lg,
     fontWeight: '600',
+    color: colors.white,
   },
 });

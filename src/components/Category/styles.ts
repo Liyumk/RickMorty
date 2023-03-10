@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     width: (dimensions.fullWidth - 40) / 2,
     height: 180,
-    backgroundColor: colors.secondary,
+    backgroundColor: colors.primary,
     borderRadius: 5,
     position: 'relative',
   },

@@ -1,22 +1,18 @@
 import {StyleSheet, Text, View, ScrollView} from 'react-native';
 import React from 'react';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {MainStackNavigatorParamList} from '../../navigation/types';
+import {
+  MainStackNavigatorParamList,
+  ScreenParamList,
+} from '../../navigation/types';
 import {RouteProp, useRoute} from '@react-navigation/native';
 import {colors, fonts, padding} from '../../styles/base';
 import CharacterBasic from '../../components/CharacterBasic';
 import Header from '../../components/Header';
 
-type charactersProp = NativeStackScreenProps<
-  MainStackNavigatorParamList,
-  'Characters'
->;
+type CharactersProps = ScreenParamList<'Characters'>;
 
-type charactersRouteProp = RouteProp<MainStackNavigatorParamList, 'Characters'>;
-
-const Characters = () => {
-  const route = useRoute<charactersRouteProp>();
-
+const Characters: CharactersProps = ({navigation, route}) => {
   return (
     <View style={styles.container}>
       <Header title="Characters" />
@@ -39,6 +35,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.darker,
     padding: padding.md,
+    paddingVertical: 0,
   },
   header: {
     fontSize: fonts.lg,

@@ -14,11 +14,11 @@ const CharacterBasic = () => {
         <Text style={styles.name}>Rick Sanches</Text>
         <View style={styles.status}>
           <View style={styles.statusIndicatorContainer}>
-            <StatusIndicator />
+            <StatusIndicator size={12} />
           </View>
           <Text style={styles.descriptionsText}> Alive - Human</Text>
         </View>
-        <Text style={styles.descriptionsText}>🚹 Male</Text>
+        <Text style={styles.descriptionsText}>♂️ Male</Text>
         <Text style={styles.descriptionsText}>
           Last seen on <Text style={styles.planet}>Earth</Text>
         </Text>
@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
   descriptionsText: {
     fontWeight: '600',
     marginTop: 6,
+    color: colors.quaternary,
   },
   image: {
     width: 180,
@@ -54,6 +55,7 @@ const styles = StyleSheet.create({
   name: {
     fontSize: fonts.md,
     fontWeight: '600',
+    color: colors.tertiary,
   },
   planet: {
     fontWeight: '900',
