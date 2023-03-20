@@ -1,5 +1,5 @@
-import {StyleSheet, Text, View, ScrollView} from 'react-native';
-import React from 'react';
+import {StyleSheet, Text, View, ScrollView, FlatList} from 'react-native';
+import React, {useCallback, useEffect} from 'react';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {
   MainStackNavigatorParamList,
@@ -9,21 +9,32 @@ import {RouteProp, useRoute} from '@react-navigation/native';
 import {colors, fonts, padding} from '../../styles/base';
 import CharacterBasic from '../../components/CharacterBasic';
 import Header from '../../components/Header';
+import {useCharacters} from '../../hooks/api/useCharacters/index';
+import {Character} from '../../types/Characters';
 
 type CharactersProps = ScreenParamList<'Characters'>;
 
 const Characters: CharactersProps = ({navigation, route}) => {
+  const {data, isError, isLoading} = useCharacters();
+
+  const CharacterBasicItem = useCallback(
+    ({name, status, gender, image, location, species}: Character) => {
+      const charProps = {name, status, gender, image, location, species};
+      return <CharacterBasic {...charProps} />;
+    },
+    [],
+  );
+
   return (
     <View style={styles.container}>
       <Header title="Characters" />
-      <ScrollView contentContainerStyle={styles.characterBasicContainer}>
-        <CharacterBasic />
-        <CharacterBasic />
-        <CharacterBasic />
-        <CharacterBasic />
-        <CharacterBasic />
-        <CharacterBasic />
-      </ScrollView>
+      {!isError && (
+        <FlatList
+          style={styles.characterBasicContainer}
+          data={data?.results}
+          renderItem={({item}) => <CharacterBasicItem {...item} />}
+        />
+      )}
     </View>
   );
 };

@@ -2,26 +2,43 @@ import {StyleSheet, Text, View, Image} from 'react-native';
 import React from 'react';
 import {colors, fonts} from '../../styles/base';
 import StatusIndicator from '../StatusIndicator';
+import {Character} from '../../types/Characters';
 
-const CharacterBasic = () => {
-  const uri = 'https://robohash.org/weirdbot';
+type CharBasic = Pick<
+  Character,
+  'name' | 'status' | 'gender' | 'location' | 'image' | 'species'
+>;
+
+const CharacterBasic = ({
+  name,
+  status,
+  gender,
+  location,
+  image,
+  species,
+}: CharBasic) => {
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
-        <Image source={{uri: uri}} resizeMode="cover" style={styles.image} />
+        <Image source={{uri: image}} resizeMode="cover" style={styles.image} />
       </View>
       <View style={styles.descriptionsContainer}>
-        <Text style={styles.name}>Rick Sanches</Text>
+        <Text style={styles.name}>{name}</Text>
         <View style={styles.status}>
           <View style={styles.statusIndicatorContainer}>
             <StatusIndicator size={12} />
           </View>
-          <Text style={styles.descriptionsText}> Alive - Human</Text>
+          <Text style={styles.descriptionsText}>
+            {' '}
+            {status} - {species}
+          </Text>
         </View>
-        <Text style={styles.descriptionsText}>♂️ Male</Text>
-        <Text style={styles.descriptionsText}>
-          Last seen on <Text style={styles.planet}>Earth</Text>
-        </Text>
+        <Text style={styles.descriptionsText}>♂️ {gender}</Text>
+        <View style={styles.descriptionsTextContainer}>
+          <Text style={styles.descriptionsTextPlanet}>
+            Planet: <Text style={styles.planet}>{location.name}</Text>
+          </Text>
+        </View>
       </View>
     </View>
   );
@@ -46,6 +63,14 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     marginTop: 6,
     color: colors.quaternary,
+  },
+  descriptionsTextPlanet: {
+    fontWeight: '600',
+    marginTop: 6,
+    color: colors.quaternary,
+  },
+  descriptionsTextContainer: {
+    flexDirection: 'row',
   },
   image: {
     width: 180,

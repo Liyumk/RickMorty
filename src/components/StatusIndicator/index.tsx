@@ -1,7 +1,7 @@
 import {ColorValue, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 
-export interface Props {
+interface Props {
   color?: ColorValue;
   shape?: Shape;
   size?: number;
