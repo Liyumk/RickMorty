@@ -19,26 +19,36 @@ const CharacterBasic = ({
 }: CharBasic) => {
   return (
     <View style={styles.container}>
+      {/* Image */}
       <View style={styles.imageContainer}>
         <Image source={{uri: image}} resizeMode="cover" style={styles.image} />
       </View>
+      {/* Description */}
       <View style={styles.descriptionsContainer}>
         <Text style={styles.name}>{name}</Text>
         <View style={styles.status}>
           <View style={styles.statusIndicatorContainer}>
-            <StatusIndicator size={12} />
+            <StatusIndicator
+              size={12}
+              color={
+                status === 'Dead' ? 'red' : status === 'unknown' ? 'grey' : null
+              }
+            />
           </View>
           <Text style={styles.descriptionsText}>
-            {' '}
             {status} - {species}
           </Text>
         </View>
-        <Text style={styles.descriptionsText}>♂️ {gender}</Text>
-        <View style={styles.descriptionsTextContainer}>
-          <Text style={styles.descriptionsTextPlanet}>
-            Planet: <Text style={styles.planet}>{location.name}</Text>
-          </Text>
-        </View>
+        <Text style={styles.descriptionsText}>
+          {gender === 'unknown' && '🤷‍♂️'}
+          {gender === 'Male' && '🧔‍♂️'}
+          {gender === 'Female' && '👩'}
+          {'  '}
+          {gender}
+        </Text>
+        <Text style={styles.descriptionsTextPlanet}>
+          Last known location: {location.name.toUpperCase()}
+        </Text>
       </View>
     </View>
   );
@@ -49,15 +59,17 @@ export default CharacterBasic;
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    width: '100%',
-    minHeight: 150,
+    columnGap: 20,
+    minHeight: 180,
     backgroundColor: colors.primary,
     paddingRight: 10,
-    borderRadius: 5,
+    borderTopRightRadius: 5,
+    borderBottomRightRadius: 5,
     marginTop: 10,
   },
   descriptionsContainer: {
-    paddingTop: 15,
+    paddingTop: 10,
+    flex: 1,
   },
   descriptionsText: {
     fontWeight: '600',
@@ -65,30 +77,29 @@ const styles = StyleSheet.create({
     color: colors.quaternary,
   },
   descriptionsTextPlanet: {
-    fontWeight: '600',
     marginTop: 6,
     color: colors.quaternary,
+    fontWeight: '900',
+    width: 165,
+    lineHeight: 20,
   },
   descriptionsTextContainer: {
     flexDirection: 'row',
   },
   image: {
     width: 180,
-    height: 150,
+    height: 180,
   },
-  imageContainer: {width: 200},
+  imageContainer: {flex: 1},
   name: {
     fontSize: fonts.md,
     fontWeight: '600',
     color: colors.tertiary,
   },
-  planet: {
-    fontWeight: '900',
-  },
   status: {
     flexDirection: 'row',
     alignItems: 'center',
-    columnGap: 4,
+    columnGap: 5,
     marginTop: 5,
   },
   statusIndicatorContainer: {
